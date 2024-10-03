@@ -1,4 +1,4 @@
-import { newUserInfo } from "../modelos/types_d_users"
+import { newUserInfo } from "../modelos/users"
 
 const parseName = (nameFromRequest:any):string =>{
     if(!isString(nameFromRequest)){
@@ -32,7 +32,7 @@ const parseComment = (commentFromRequest:any):string =>{
     return commentFromRequest
 }
 
-const parteExperiences = (experiencesFromRequest:any):Object[] =>{
+const parseExperiences = (experiencesFromRequest:any):string[] =>{
     if(!isString(experiencesFromRequest)){
         throw new Error ('Incorrect or missing comment')
     }
@@ -49,7 +49,7 @@ const toNewUser = (object:any): newUserInfo => {
         mail:parseMail(object.mail),
         password:parsePassword(object.password),
         comment:parseComment(object.comment),
-        experiences:parteExperiences(object.experiences),
+        experiences:parseExperiences(object.experiences),
     }
     return newUser
 }

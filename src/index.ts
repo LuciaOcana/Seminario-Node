@@ -1,7 +1,7 @@
 import express,{RequestHandler} from 'express'
 import cors from 'cors'
-import userRouter from './routes/user'
-import experienciasRouter from './routes/experiencias'
+import userRouter from './routes/usersRoutes'
+import experienciasRouter from './routes/experiencesRoutes'
 import { run } from './database/mongo_conn'
 
 const app = express()

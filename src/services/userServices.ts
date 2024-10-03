@@ -1,4 +1,4 @@
-import { usersofDB } from '../modelos/types_d_users'
+import { usersofDB } from '../modelos/users'
 //import userData from './users.json'
 
 export const getEntries = {

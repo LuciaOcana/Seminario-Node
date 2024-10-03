@@ -1,4 +1,4 @@
-import { experienciasofDB } from "../modelos/types_d_experiencias";
+import { experienciasofDB } from "../modelos/experiences";
 
 export const getEntries = {
     // Funcion para obtener todas las experiencias de la base de datos.
