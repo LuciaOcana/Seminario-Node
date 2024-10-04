@@ -36,15 +36,16 @@ router.delete('/:id', async(req, res) => {
 })
 
 // Nueva ruta para añadir una experiencia a un usuario
-router.post('/:userId/experiences/:experienceName', async (req, res) => {
-    const data = await userServices.getEntries.addExperience(req.params.userId,req.params.experienceName)
+router.post('/addExperience/:userId/:experienceId', async (req, res) => {
+    console.log(req.params);
+    const data = await userServices.getEntries.addExperience(req.params.userId,req.params.experienceId)
     return res.json(data);
 
 })
 
 // Nueva ruta para eliminar una experiencia de un usuario
-router.delete('/:userId/experiences/:experienceName', async (req, res) => {
-    const data = await userServices.getEntries.delExperience(req.params.userId,req.params.experienceName)
+router.delete('/delExperience/:userId/:experienceId', async (req, res) => {
+    const data = await userServices.getEntries.delExperience(req.params.userId,req.params.experienceId)
     return res.json(data);
 });
 

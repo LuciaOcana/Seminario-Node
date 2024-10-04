@@ -1,3 +1,4 @@
+import { ObjectId } from "mongoose"
 import { newUserInfo } from "../modelos/users"
 
 const parseName = (nameFromRequest:any):string =>{
@@ -32,7 +33,7 @@ const parseComment = (commentFromRequest:any):string =>{
     return commentFromRequest
 }
 
-const parseExperiences = (experiencesFromRequest:any):string[] =>{
+const parseExperiences = (experiencesFromRequest:any):ObjectId[] =>{
     if(!isString(experiencesFromRequest)){
         throw new Error ('Incorrect or missing comment')
     }

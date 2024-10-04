@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { model, ObjectId, Schema } from "mongoose";
 
 export interface usersInterface{
     id: number,
@@ -6,7 +6,7 @@ export interface usersInterface{
     mail: string,
     password: string,
     comment: string,
-    experiences: string[]
+    experiences: ObjectId[]
 }
 export type UsersInterfacePublicInfo = Pick<usersInterface, 'id' | 'name' | 'comment' | 'experiences' >
 export type newUserInfo = Omit<usersInterface,'id'>

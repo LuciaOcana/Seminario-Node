@@ -25,10 +25,10 @@ export const getEntries = {
     },
     // Añadir una experiencia a un usuario (similar a addParticipant)
     addExperience: async (userId: string, experienceId: string) => {
-        return await usersofDB.findByIdAndUpdate(userId,{$addToSet:{participants:experienceId}});
+        return await usersofDB.findByIdAndUpdate(userId,{$addToSet:{experiences:experienceId}});
     },
     // Eliminar una experiencia de un usuario (similar a delParticipant)
     delExperience: async (userId: string, experienceId: string) => {
-        return await usersofDB.findByIdAndUpdate(userId,{$pull:{participants:experienceId}});
+        return await usersofDB.findByIdAndUpdate(userId,{$pull:{experiences:experienceId}});
     }
 }
